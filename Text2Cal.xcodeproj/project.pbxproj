@@ -1,0 +1,450 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ADB104511570AB3B00BF572F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB104501570AB3B00BF572F /* Cocoa.framework */; };
+		ADB1045B1570AB3B00BF572F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ADB104591570AB3B00BF572F /* InfoPlist.strings */; };
+		ADB1045D1570AB3B00BF572F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB1045C1570AB3B00BF572F /* main.m */; };
+		ADB104611570AB3B00BF572F /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = ADB1045F1570AB3B00BF572F /* Credits.rtf */; };
+		ADB104641570AB3C00BF572F /* Text2CalAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB104631570AB3C00BF572F /* Text2CalAppDelegate.m */; };
+		ADB104671570AB3C00BF572F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADB104651570AB3C00BF572F /* MainMenu.xib */; };
+		ADB1046F1570AB3C00BF572F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB1046E1570AB3C00BF572F /* SenTestingKit.framework */; };
+		ADB104701570AB3C00BF572F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB104501570AB3B00BF572F /* Cocoa.framework */; };
+		ADB104781570AB3C00BF572F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ADB104761570AB3C00BF572F /* InfoPlist.strings */; };
+		ADB1047B1570AB3C00BF572F /* Text2CalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB1047A1570AB3C00BF572F /* Text2CalTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ADB104711570AB3C00BF572F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADB104431570AB3B00BF572F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ADB1044B1570AB3B00BF572F;
+			remoteInfo = Text2Cal;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		ADB1044C1570AB3B00BF572F /* Text2Cal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Text2Cal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADB104501570AB3B00BF572F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		ADB104531570AB3B00BF572F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		ADB104541570AB3B00BF572F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		ADB104551570AB3B00BF572F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		ADB104581570AB3B00BF572F /* Text2Cal-Info.plist */ = {isa = PBXFileReference; path = "Text2Cal-Info.plist"; sourceTree = "<group>"; };
+		ADB1045A1570AB3B00BF572F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		ADB1045C1570AB3B00BF572F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		ADB1045E1570AB3B00BF572F /* Text2Cal-Prefix.pch */ = {isa = PBXFileReference; path = "Text2Cal-Prefix.pch"; sourceTree = "<group>"; };
+		ADB104601570AB3B00BF572F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		ADB104621570AB3B00BF572F /* Text2CalAppDelegate.h */ = {isa = PBXFileReference; path = Text2CalAppDelegate.h; sourceTree = "<group>"; };
+		ADB104631570AB3C00BF572F /* Text2CalAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Text2CalAppDelegate.m; sourceTree = "<group>"; };
+		ADB104661570AB3C00BF572F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		ADB1046D1570AB3C00BF572F /* Text2CalTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Text2CalTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADB1046E1570AB3C00BF572F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		ADB104751570AB3C00BF572F /* Text2CalTests-Info.plist */ = {isa = PBXFileReference; path = "Text2CalTests-Info.plist"; sourceTree = "<group>"; };
+		ADB104771570AB3C00BF572F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		ADB104791570AB3C00BF572F /* Text2CalTests.h */ = {isa = PBXFileReference; path = Text2CalTests.h; sourceTree = "<group>"; };
+		ADB1047A1570AB3C00BF572F /* Text2CalTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Text2CalTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ADB104491570AB3B00BF572F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADB104511570AB3B00BF572F /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADB104691570AB3C00BF572F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADB1046F1570AB3C00BF572F /* SenTestingKit.framework in Frameworks */,
+				ADB104701570AB3C00BF572F /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ADB104411570AB3B00BF572F = {
+			isa = PBXGroup;
+			children = (
+				ADB104561570AB3B00BF572F /* Text2Cal */,
+				ADB104731570AB3C00BF572F /* Text2CalTests */,
+				ADB1044F1570AB3B00BF572F /* Frameworks */,
+				ADB1044D1570AB3B00BF572F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ADB1044D1570AB3B00BF572F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ADB1044C1570AB3B00BF572F /* Text2Cal.app */,
+				ADB1046D1570AB3C00BF572F /* Text2CalTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ADB1044F1570AB3B00BF572F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ADB104501570AB3B00BF572F /* Cocoa.framework */,
+				ADB1046E1570AB3C00BF572F /* SenTestingKit.framework */,
+				ADB104521570AB3B00BF572F /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ADB104521570AB3B00BF572F /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ADB104531570AB3B00BF572F /* AppKit.framework */,
+				ADB104541570AB3B00BF572F /* CoreData.framework */,
+				ADB104551570AB3B00BF572F /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		ADB104561570AB3B00BF572F /* Text2Cal */ = {
+			isa = PBXGroup;
+			children = (
+				ADB104621570AB3B00BF572F /* Text2CalAppDelegate.h */,
+				ADB104631570AB3C00BF572F /* Text2CalAppDelegate.m */,
+				ADB104651570AB3C00BF572F /* MainMenu.xib */,
+				ADB104571570AB3B00BF572F /* Supporting Files */,
+			);
+			path = Text2Cal;
+			sourceTree = "<group>";
+		};
+		ADB104571570AB3B00BF572F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ADB104581570AB3B00BF572F /* Text2Cal-Info.plist */,
+				ADB104591570AB3B00BF572F /* InfoPlist.strings */,
+				ADB1045C1570AB3B00BF572F /* main.m */,
+				ADB1045E1570AB3B00BF572F /* Text2Cal-Prefix.pch */,
+				ADB1045F1570AB3B00BF572F /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ADB104731570AB3C00BF572F /* Text2CalTests */ = {
+			isa = PBXGroup;
+			children = (
+				ADB104791570AB3C00BF572F /* Text2CalTests.h */,
+				ADB1047A1570AB3C00BF572F /* Text2CalTests.m */,
+				ADB104741570AB3C00BF572F /* Supporting Files */,
+			);
+			path = Text2CalTests;
+			sourceTree = "<group>";
+		};
+		ADB104741570AB3C00BF572F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ADB104751570AB3C00BF572F /* Text2CalTests-Info.plist */,
+				ADB104761570AB3C00BF572F /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ADB1044B1570AB3B00BF572F /* Text2Cal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADB1047E1570AB3C00BF572F /* Build configuration list for PBXNativeTarget "Text2Cal" */;
+			buildPhases = (
+				ADB104481570AB3B00BF572F /* Sources */,
+				ADB104491570AB3B00BF572F /* Frameworks */,
+				ADB1044A1570AB3B00BF572F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Text2Cal;
+			productName = Text2Cal;
+			productReference = ADB1044C1570AB3B00BF572F /* Text2Cal.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ADB1046C1570AB3C00BF572F /* Text2CalTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADB104811570AB3C00BF572F /* Build configuration list for PBXNativeTarget "Text2CalTests" */;
+			buildPhases = (
+				ADB104681570AB3C00BF572F /* Sources */,
+				ADB104691570AB3C00BF572F /* Frameworks */,
+				ADB1046A1570AB3C00BF572F /* Resources */,
+				ADB1046B1570AB3C00BF572F /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ADB104721570AB3C00BF572F /* PBXTargetDependency */,
+			);
+			name = Text2CalTests;
+			productName = Text2CalTests;
+			productReference = ADB1046D1570AB3C00BF572F /* Text2CalTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ADB104431570AB3B00BF572F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = ADB104461570AB3B00BF572F /* Build configuration list for PBXProject "Text2Cal" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = ADB104411570AB3B00BF572F;
+			productRefGroup = ADB1044D1570AB3B00BF572F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ADB1044B1570AB3B00BF572F /* Text2Cal */,
+				ADB1046C1570AB3C00BF572F /* Text2CalTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ADB1044A1570AB3B00BF572F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADB1045B1570AB3B00BF572F /* InfoPlist.strings in Resources */,
+				ADB104611570AB3B00BF572F /* Credits.rtf in Resources */,
+				ADB104671570AB3C00BF572F /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADB1046A1570AB3C00BF572F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADB104781570AB3C00BF572F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		ADB1046B1570AB3C00BF572F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ADB104481570AB3B00BF572F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADB1045D1570AB3B00BF572F /* main.m in Sources */,
+				ADB104641570AB3C00BF572F /* Text2CalAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADB104681570AB3C00BF572F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADB1047B1570AB3C00BF572F /* Text2CalTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ADB104721570AB3C00BF572F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ADB1044B1570AB3B00BF572F /* Text2Cal */;
+			targetProxy = ADB104711570AB3C00BF572F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ADB104591570AB3B00BF572F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ADB1045A1570AB3B00BF572F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		ADB1045F1570AB3B00BF572F /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ADB104601570AB3B00BF572F /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		ADB104651570AB3C00BF572F /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ADB104661570AB3C00BF572F /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		ADB104761570AB3C00BF572F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ADB104771570AB3C00BF572F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ADB1047C1570AB3C00BF572F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		ADB1047D1570AB3C00BF572F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		ADB1047F1570AB3C00BF572F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Text2Cal/Text2Cal-Prefix.pch";
+				INFOPLIST_FILE = "Text2Cal/Text2Cal-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		ADB104801570AB3C00BF572F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Text2Cal/Text2Cal-Prefix.pch";
+				INFOPLIST_FILE = "Text2Cal/Text2Cal-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		ADB104821570AB3C00BF572F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Text2Cal.app/Contents/MacOS/Text2Cal";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Text2Cal/Text2Cal-Prefix.pch";
+				INFOPLIST_FILE = "Text2CalTests/Text2CalTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		ADB104831570AB3C00BF572F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Text2Cal.app/Contents/MacOS/Text2Cal";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Text2Cal/Text2Cal-Prefix.pch";
+				INFOPLIST_FILE = "Text2CalTests/Text2CalTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ADB104461570AB3B00BF572F /* Build configuration list for PBXProject "Text2Cal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADB1047C1570AB3C00BF572F /* Debug */,
+				ADB1047D1570AB3C00BF572F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADB1047E1570AB3C00BF572F /* Build configuration list for PBXNativeTarget "Text2Cal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADB1047F1570AB3C00BF572F /* Debug */,
+				ADB104801570AB3C00BF572F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		ADB104811570AB3C00BF572F /* Build configuration list for PBXNativeTarget "Text2CalTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADB104821570AB3C00BF572F /* Debug */,
+				ADB104831570AB3C00BF572F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ADB104431570AB3B00BF572F /* Project object */;
+}
