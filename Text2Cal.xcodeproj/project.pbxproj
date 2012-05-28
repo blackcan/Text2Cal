@@ -17,7 +17,24 @@
 		ADB104701570AB3C00BF572F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB104501570AB3B00BF572F /* Cocoa.framework */; };
 		ADB104781570AB3C00BF572F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ADB104761570AB3C00BF572F /* InfoPlist.strings */; };
 		ADB1047B1570AB3C00BF572F /* Text2CalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB1047A1570AB3C00BF572F /* Text2CalTests.m */; };
+		ADB104871570AC3E00BF572F /* iCal.app in Sources */ = {isa = PBXBuildFile; fileRef = ADB104861570AC3E00BF572F /* iCal.app */; };
+		ADB104891570AC6700BF572F /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB104881570AC6700BF572F /* ScriptingBridge.framework */; };
+		ADB1048B1570CAC000BF572F /* Text2Cal.sdef in Resources */ = {isa = PBXBuildFile; fileRef = ADB1048A1570CAC000BF572F /* Text2Cal.sdef */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		ADB104841570AB8000BF572F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.app";
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILES_DIR)/$(INPUT_FILE_BASE).h",
+			);
+			script = "sdef \"$INPUT_FILE_PATH\" | sdp -fh -o \"$DERIVED_FILES_DIR\" --basename \"$INPUT_FILE_BASE\" --bundleid `defaults read \"$INPUT_FILE_PATH/Contents/Info\" CFBundleIdentifier`";
+		};
+/* End PBXBuildRule section */
 
 /* Begin PBXContainerItemProxy section */
 		ADB104711570AB3C00BF572F /* PBXContainerItemProxy */ = {
@@ -35,20 +52,23 @@
 		ADB104531570AB3B00BF572F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		ADB104541570AB3B00BF572F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		ADB104551570AB3B00BF572F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		ADB104581570AB3B00BF572F /* Text2Cal-Info.plist */ = {isa = PBXFileReference; path = "Text2Cal-Info.plist"; sourceTree = "<group>"; };
+		ADB104581570AB3B00BF572F /* Text2Cal-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Text2Cal-Info.plist"; sourceTree = "<group>"; };
 		ADB1045A1570AB3B00BF572F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		ADB1045C1570AB3B00BF572F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		ADB1045E1570AB3B00BF572F /* Text2Cal-Prefix.pch */ = {isa = PBXFileReference; path = "Text2Cal-Prefix.pch"; sourceTree = "<group>"; };
+		ADB1045E1570AB3B00BF572F /* Text2Cal-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Text2Cal-Prefix.pch"; sourceTree = "<group>"; };
 		ADB104601570AB3B00BF572F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		ADB104621570AB3B00BF572F /* Text2CalAppDelegate.h */ = {isa = PBXFileReference; path = Text2CalAppDelegate.h; sourceTree = "<group>"; };
+		ADB104621570AB3B00BF572F /* Text2CalAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Text2CalAppDelegate.h; sourceTree = "<group>"; };
 		ADB104631570AB3C00BF572F /* Text2CalAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Text2CalAppDelegate.m; sourceTree = "<group>"; };
 		ADB104661570AB3C00BF572F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		ADB1046D1570AB3C00BF572F /* Text2CalTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Text2CalTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADB1046E1570AB3C00BF572F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		ADB104751570AB3C00BF572F /* Text2CalTests-Info.plist */ = {isa = PBXFileReference; path = "Text2CalTests-Info.plist"; sourceTree = "<group>"; };
+		ADB104751570AB3C00BF572F /* Text2CalTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Text2CalTests-Info.plist"; sourceTree = "<group>"; };
 		ADB104771570AB3C00BF572F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		ADB104791570AB3C00BF572F /* Text2CalTests.h */ = {isa = PBXFileReference; path = Text2CalTests.h; sourceTree = "<group>"; };
+		ADB104791570AB3C00BF572F /* Text2CalTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Text2CalTests.h; sourceTree = "<group>"; };
 		ADB1047A1570AB3C00BF572F /* Text2CalTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Text2CalTests.m; sourceTree = "<group>"; };
+		ADB104861570AC3E00BF572F /* iCal.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = iCal.app; path = ../../../../../Applications/iCal.app; sourceTree = "<group>"; };
+		ADB104881570AC6700BF572F /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
+		ADB1048A1570CAC000BF572F /* Text2Cal.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Text2Cal.sdef; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADB104891570AC6700BF572F /* ScriptingBridge.framework in Frameworks */,
 				ADB104511570AB3B00BF572F /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -75,6 +96,8 @@
 		ADB104411570AB3B00BF572F = {
 			isa = PBXGroup;
 			children = (
+				ADB104881570AC6700BF572F /* ScriptingBridge.framework */,
+				ADB104861570AC3E00BF572F /* iCal.app */,
 				ADB104561570AB3B00BF572F /* Text2Cal */,
 				ADB104731570AB3C00BF572F /* Text2CalTests */,
 				ADB1044F1570AB3B00BF572F /* Frameworks */,
@@ -130,6 +153,7 @@
 				ADB1045C1570AB3B00BF572F /* main.m */,
 				ADB1045E1570AB3B00BF572F /* Text2Cal-Prefix.pch */,
 				ADB1045F1570AB3B00BF572F /* Credits.rtf */,
+				ADB1048A1570CAC000BF572F /* Text2Cal.sdef */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -165,6 +189,7 @@
 				ADB1044A1570AB3B00BF572F /* Resources */,
 			);
 			buildRules = (
+				ADB104841570AB8000BF572F /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -226,6 +251,7 @@
 				ADB1045B1570AB3B00BF572F /* InfoPlist.strings in Resources */,
 				ADB104611570AB3B00BF572F /* Credits.rtf in Resources */,
 				ADB104671570AB3C00BF572F /* MainMenu.xib in Resources */,
+				ADB1048B1570CAC000BF572F /* Text2Cal.sdef in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADB104871570AC3E00BF572F /* iCal.app in Sources */,
 				ADB1045D1570AB3B00BF572F /* main.m in Sources */,
 				ADB104641570AB3C00BF572F /* Text2CalAppDelegate.m in Sources */,
 			);
@@ -435,6 +462,7 @@
 				ADB104801570AB3C00BF572F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ADB104811570AB3C00BF572F /* Build configuration list for PBXNativeTarget "Text2CalTests" */ = {
 			isa = XCConfigurationList;
@@ -443,6 +471,7 @@
 				ADB104831570AB3C00BF572F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,8 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface Text2CalAppDelegate : NSObject <NSApplicationDelegate>
+@interface NSApplication (Text2CalApp)
 
-@property (assign) IBOutlet NSWindow *window;
+
+@property (copy) NSString *newEvent;
 
 @end
