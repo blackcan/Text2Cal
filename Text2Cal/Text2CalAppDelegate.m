@@ -24,11 +24,13 @@ NSInteger endMonth;
 NSInteger endDay;
 NSInteger endHour;
 NSInteger endMinute;
-NSMutableArray *yearChanges;
-NSMutableArray *monthChanges;
-NSMutableArray *dayChanges;
-NSMutableArray *hourChanges;
-NSMutableArray *minuteChanges;
+NSMutableArray *dateChanges;
+
+//測試用
+-(void) awakeFromNib
+{
+    [self setNewEvent:@"2012/5/29  2012/5/30開會"];
+}
 
 -(NSString*) newEvent
 {
@@ -44,46 +46,40 @@ NSMutableArray *minuteChanges;
     eventName = @"New Event";
     eventPlace = @"";
     
-    //取得使用者目前日期時間物件
-    NSCalendar *usersCalendar =
-    [[NSLocale currentLocale] objectForKey:NSLocaleCalendar];
+//    //取得使用者目前日期時間物件
+//    NSCalendar *usersCalendar =
+//    [[NSLocale currentLocale] objectForKey:NSLocaleCalendar];
+//    
+//    //設定DataComponent要存哪些項目（年月日...）
+//    NSInteger unitFlags = NSYearCalendarUnit | 
+//    NSMonthCalendarUnit |
+//    NSWeekdayCalendarUnit |
+//    NSDayCalendarUnit |  
+//    NSHourCalendarUnit |
+//    NSMinuteCalendarUnit;
+//    
+//    //宣告DateComponent
+//    NSDateComponents *comps = [usersCalendar components:unitFlags fromDate:startDate];
+//    
+//    //取得起始日期時間細項
+//    startYear = [comps year];
+//    startMonth = [comps month];
+//    startDay = [comps day];
+//    startHour = [comps hour];
+//    startMinute = 0;
     
-    //設定DataComponent要存哪些項目（年月日...）
-    NSInteger unitFlags = NSYearCalendarUnit | 
-    NSMonthCalendarUnit |
-    NSWeekdayCalendarUnit |
-    NSDayCalendarUnit |  
-    NSHourCalendarUnit |
-    NSMinuteCalendarUnit;
     
-    //宣告DateComponent
-    NSDateComponents *comps = [usersCalendar components:unitFlags fromDate:startDate];
     
-    //取得起始日期時間細項
-    startYear = [comps year];
-    startMonth = [comps month];
-    startDay = [comps day];
-    startHour = [comps hour];
-    startMinute = 0;
-    
-    eventName = newEvent;
-    
-    yearChanges = [[NSMutableArray alloc] init];
-    monthChanges = [[NSMutableArray alloc] init];
-    dayChanges = [[NSMutableArray alloc] init];
-    hourChanges = [[NSMutableArray alloc] init];
-    minuteChanges = [[NSMutableArray alloc] init];
+    dateChanges = [[NSMutableArray alloc] init];
 
     //若傳入字串不為空則開始處理
     if (newEvent != nil) 
     {
-                
-        NSRange range;
-        NSInteger stringIndex;
+        eventName = newEvent;
         
-        //yyyy/mm/dd
-        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"(20|21)?[0-9]{2}[- /.,](0?[1-9]|1[012])[- /.,](0?[1-9]|[12][0-9]|3[01])" options:NSRegularExpressionCaseInsensitive error:NULL];
-        NSArray *matches = [regex matchesInString:newEvent options:0 range:NSMakeRange(0, [newEvent length])];
+        //處理yyyy/mm/dd
+        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"(20|21)?[0-9]{2}[- /.,](0?[1-9]|1[012])[- /.,]([12][0-9]|3[01]|0?[1-9])" options:NSRegularExpressionCaseInsensitive error:NULL];
+        NSArray *matches = [regex matchesInString:newEvent options:1 range:NSMakeRange(0, [newEvent length])];
         
         
         for (NSTextCheckingResult *match in matches) 
@@ -95,69 +91,75 @@ NSMutableArray *minuteChanges;
             substring = [substring stringByReplacingOccurrencesOfString:@"." withString:@"/"];
             substring = [substring stringByReplacingOccurrencesOfString:@"," withString:@"/"];
             NSDate *date = [NSDate dateWithNaturalLanguageString:substring];
+                        
+            [dateChanges addObject:[NSArray arrayWithObjects:date, NSStringFromRange(matchRange), nil]];
             
-            NSDateComponents *dateComponents =
-            [[NSCalendar currentCalendar] components:unitFlags fromDate:date];
-            
-            [yearChanges addObjectsFromArray:[NSArray arrayWithObjects:[NSNumber numberWithInteger: [dateComponents year]], [NSNumber numberWithInteger:matchRange.location], nil]];
-            [monthChanges addObjectsFromArray:[NSArray arrayWithObjects:[NSNumber numberWithInteger: [dateComponents year]], [NSNumber numberWithInteger:matchRange.location], nil]];
-            [dayChanges addObjectsFromArray:[NSArray arrayWithObjects:[NSNumber numberWithInteger: [dateComponents year]], [NSNumber numberWithInteger:matchRange.location], nil]];
+            eventName = [eventName stringByReplacingOccurrencesOfString:substring withString:@""];
             
         }
-        //字串有"明天"
-        range = [newEvent rangeOfString:@"明天"];
-        stringIndex = range.location;
-        if (stringIndex != NSNotFound) 
-        {
-            startDay = startDay + 1;
-            eventName = [eventName stringByReplacingOccurrencesOfString:@"明天" withString:@""];
-        }
         
-        range = [newEvent rangeOfString:@"一點"];
-        stringIndex = range.location;
-        if (stringIndex != NSNotFound) 
-        {
-            startHour = 1;
-            eventName = [eventName stringByReplacingOccurrencesOfString:@"一點" withString:@""];
-        }
+//        NSRange range;
+//        NSInteger stringIndex;
         
-        //字串有"下午"
-        range = [newEvent rangeOfString:@"下午"];
-        stringIndex = range.location;
-        if (stringIndex != NSNotFound) 
-        {
-            if (startHour < 12) 
-            {
-                startHour = startHour + 12;
-            }
-            eventName = [eventName stringByReplacingOccurrencesOfString:@"下午" withString:@""];
-        }
+//        //字串有"明天"
+//        range = [newEvent rangeOfString:@"明天"];
+//        stringIndex = range.location;
+//        if (stringIndex != NSNotFound) 
+//        {
+//            startDay = startDay + 1;
+//            eventName = [eventName stringByReplacingOccurrencesOfString:@"明天" withString:@""];
+//        }
+//        
+//        range = [newEvent rangeOfString:@"一點"];
+//        stringIndex = range.location;
+//        if (stringIndex != NSNotFound) 
+//        {
+//            startHour = 1;
+//            eventName = [eventName stringByReplacingOccurrencesOfString:@"一點" withString:@""];
+//        }
+//        
+//        //字串有"下午"
+//        range = [newEvent rangeOfString:@"下午"];
+//        stringIndex = range.location;
+//        if (stringIndex != NSNotFound) 
+//        {
+//            if (startHour < 12) 
+//            {
+//                startHour = startHour + 12;
+//            }
+//            eventName = [eventName stringByReplacingOccurrencesOfString:@"下午" withString:@""];
+//        }
+//        
+//        //設定結束時間
+//        endYear = startYear;
+//        endMonth = startMonth;
+//        endDay = startDay;
+//        endHour = startHour + 1;
+//        endMinute = startMinute;
+//        
+//        //將日期細項轉換為Date物件
+//        NSDateComponents *comps = [[NSDateComponents alloc] init];
+//        [comps setYear:startYear];
+//        [comps setMonth:startMonth];
+//        [comps setDay:startDay];
+//        [comps setHour:startHour];
+//        [comps setMinute:startMinute];
         
-        //設定結束時間
-        endYear = startYear;
-        endMonth = startMonth;
-        endDay = startDay;
-        endHour = startHour + 1;
-        endMinute = startMinute;
+//        NSCalendar *usersCalendar =
+//        [[NSLocale currentLocale] objectForKey:NSLocaleCalendar];
+//        startDate = [usersCalendar dateFromComponents:comps];
+//        
+//        [comps setYear:endYear];
+//        [comps setMonth:endMonth];
+//        [comps setDay:endDay];
+//        [comps setHour:endHour];
+//        [comps setMinute:endMinute];
+//        endDate = [usersCalendar dateFromComponents:comps];
         
-        //將日期細項轉換為Date物件
-        NSDateComponents *comps = [[NSDateComponents alloc] init];
-        [comps setYear:startYear];
-        [comps setMonth:startMonth];
-        [comps setDay:startDay];
-        [comps setHour:startHour];
-        [comps setMinute:startMinute];
         
-        NSCalendar *usersCalendar =
-        [[NSLocale currentLocale] objectForKey:NSLocaleCalendar];
-        startDate = [usersCalendar dateFromComponents:comps];
-        
-        [comps setYear:endYear];
-        [comps setMonth:endMonth];
-        [comps setDay:endDay];
-        [comps setHour:endHour];
-        [comps setMinute:endMinute];
-        endDate = [usersCalendar dateFromComponents:comps];
+        //處理dateChanges
+        startDate = [[dateChanges objectAtIndex:0] objectAtIndex:0];
+        endDate = [[dateChanges objectAtIndex:1] objectAtIndex:0];
         
         //新增事件
         iCalApplication *iCal;
