@@ -2,8 +2,8 @@
 //  Text2CalAppDelegate.m
 //  Text2Cal
 //
-//  Created by 罐頭 on 12/5/26.
-//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//  Created by blackcan on 12/5/26.
+//  Copyright (c) 2012年 BCTech. All rights reserved.
 //
 
 #import "Text2CalAppDelegate.h"
