@@ -2,7 +2,7 @@
 //  Text2CalAppDelegate.m
 //  Text2Cal
 //
-//  Created by blackcan on 12/5/26.
+//  Created by blackcan on 2012/5/26.
 //  Copyright (c) 2012年 BCTech. All rights reserved.
 //
 
