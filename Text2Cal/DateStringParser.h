@@ -2,7 +2,7 @@
 //  DateStringParser.h
 //  Text2Cal
 //
-//  Created by Blackcan on 12/5/30.
+//  Created by Blackcan on 2012/5/30.
 //  Copyright (c) 2012年 BCTech. All rights reserved.
 //
 
