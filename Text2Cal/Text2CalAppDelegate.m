@@ -15,7 +15,7 @@
 //測試用
 -(void) awakeFromNib
 {
-    [self setNewEvent:@"後天開會"];
+    [self setNewEvent:@"大後天開會"];
 }
 
 -(NSString*) newEvent
