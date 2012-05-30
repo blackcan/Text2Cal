@@ -33,6 +33,8 @@ NSString *eventName;
     startDate = [NSDate date];
     endDate = [NSDate dateWithTimeIntervalSinceNow:3600];
     
+    NSDictionary *weekDayDic = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"一", @"二", @"三", @"四", @"五", @"六", @"日", nil] forKeys:[NSArray arrayWithObjects:@"Monday", @"Tuesday", @"Wednesday", @"Thursday", @"Friday", @"Saturday", @"Sunday", nil]];
+    
     //處理yyyy/mm/dd
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"(?<=[^0-9]|^)(20|21)?[0-9]{2}[- /.,](0?[1-9]|1[012])[- /.,]([12][0-9]|3[01]|0?[1-9])" options:NSRegularExpressionCaseInsensitive error:NULL];
     NSArray *matches = [regex matchesInString:newEvent options:1 range:NSMakeRange(0, [newEvent length])];
@@ -99,6 +101,44 @@ NSString *eventName;
         NSString *yearString = [substring substringToIndex:3];
         yearString = [NSString stringWithFormat:@"%d", [yearString integerValue] + 1911];
         substring = [NSString stringWithFormat:@"%@%@", yearString, [substring substringFromIndex:3]];
+        
+        [dateChanges addObject:[NSArray arrayWithObjects:substring, NSStringFromRange(matchRange), nil]];
+        
+    }
+    
+    //處理明天
+    regex = [NSRegularExpression regularExpressionWithPattern:@"明天" options:NSRegularExpressionCaseInsensitive error:NULL];
+    matches = [regex matchesInString:newEvent options:1 range:NSMakeRange(0, [newEvent length])];
+    
+    
+    for (NSTextCheckingResult *match in matches) 
+    {
+        NSRange matchRange = [match range];
+        NSString *substring = [newEvent substringWithRange:matchRange];
+        
+        //將eventName出現的日期資訊刪除
+        eventName = [eventName stringByReplacingOccurrencesOfString:substring withString:@""];
+        
+        substring = @"tomorrow";
+        
+        [dateChanges addObject:[NSArray arrayWithObjects:substring, NSStringFromRange(matchRange), nil]];
+        
+    }
+    
+    //處理後天
+    regex = [NSRegularExpression regularExpressionWithPattern:@"後天" options:NSRegularExpressionCaseInsensitive error:NULL];
+    matches = [regex matchesInString:newEvent options:1 range:NSMakeRange(0, [newEvent length])];
+    
+    
+    for (NSTextCheckingResult *match in matches) 
+    {
+        NSRange matchRange = [match range];
+        NSString *substring = [newEvent substringWithRange:matchRange];
+        
+        //將eventName出現的日期資訊刪除
+        eventName = [eventName stringByReplacingOccurrencesOfString:substring withString:@""];
+        
+        substring = @"day after tomorrow";
         
         [dateChanges addObject:[NSArray arrayWithObjects:substring, NSStringFromRange(matchRange), nil]];
         

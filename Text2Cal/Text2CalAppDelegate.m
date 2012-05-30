@@ -15,7 +15,7 @@
 //測試用
 -(void) awakeFromNib
 {
-    [self setNewEvent:@"6/1/2012~6/2/2012開會"];
+    [self setNewEvent:@"後天開會"];
 }
 
 -(NSString*) newEvent
@@ -46,6 +46,8 @@
         {
             theCalendar = (iCalCalendar *) [matchingCalendars objectAtIndex:0];
         }
+        
+        //建立事件
         iCalEvent *theEvent;
         NSDictionary *props = 
         [NSDictionary dictionaryWithObjectsAndKeys:
@@ -54,6 +56,7 @@
          [dateStringParser endDate], @"endDate",
          nil];
         
+        //新增事件
         theEvent = [[[iCal classForScriptingClass:@"event"] alloc] initWithProperties: props];
         [[theCalendar events] addObject: theEvent];
         [theEvent show];
