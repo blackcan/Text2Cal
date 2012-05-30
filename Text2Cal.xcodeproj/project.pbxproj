@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD350DDD1575B684008F319F /* DateStringParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AD350DDC1575B684008F319F /* DateStringParser.m */; };
 		ADB104511570AB3B00BF572F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB104501570AB3B00BF572F /* Cocoa.framework */; };
 		ADB1045B1570AB3B00BF572F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ADB104591570AB3B00BF572F /* InfoPlist.strings */; };
 		ADB1045D1570AB3B00BF572F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB1045C1570AB3B00BF572F /* main.m */; };
@@ -47,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AD350DDB1575B684008F319F /* DateStringParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateStringParser.h; sourceTree = "<group>"; };
+		AD350DDC1575B684008F319F /* DateStringParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateStringParser.m; sourceTree = "<group>"; };
 		ADB1044C1570AB3B00BF572F /* Text2Cal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Text2Cal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADB104501570AB3B00BF572F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		ADB104531570AB3B00BF572F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -137,6 +140,8 @@
 		ADB104561570AB3B00BF572F /* Text2Cal */ = {
 			isa = PBXGroup;
 			children = (
+				AD350DDB1575B684008F319F /* DateStringParser.h */,
+				AD350DDC1575B684008F319F /* DateStringParser.m */,
 				ADB104621570AB3B00BF572F /* Text2CalAppDelegate.h */,
 				ADB104631570AB3C00BF572F /* Text2CalAppDelegate.m */,
 				ADB104651570AB3C00BF572F /* MainMenu.xib */,
@@ -187,6 +192,7 @@
 				ADB104481570AB3B00BF572F /* Sources */,
 				ADB104491570AB3B00BF572F /* Frameworks */,
 				ADB1044A1570AB3B00BF572F /* Resources */,
+				AD350DDA1575965C008F319F /* Auto update build version with Git hash */,
 			);
 			buildRules = (
 				ADB104841570AB8000BF572F /* PBXBuildRule */,
@@ -266,6 +272,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		AD350DDA1575965C008F319F /* Auto update build version with Git hash */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Auto update build version with Git hash";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd Text2Cal\nbuild=`git log --oneline HEAD^1.. | awk '{print $1 }'`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $build\" Text2Cal-Info.plist";
+		};
 		ADB1046B1570AB3C00BF572F /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -289,6 +309,7 @@
 				ADB104871570AC3E00BF572F /* iCal.app in Sources */,
 				ADB1045D1570AB3B00BF572F /* main.m in Sources */,
 				ADB104641570AB3C00BF572F /* Text2CalAppDelegate.m in Sources */,
+				AD350DDD1575B684008F319F /* DateStringParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
